@@ -5,6 +5,7 @@ class MainController < ApplicationController
 
   def about
     # render('about')
+    @created_by = "Algerina"
   end
 
   def hello

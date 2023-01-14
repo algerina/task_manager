@@ -1,15 +1,5 @@
 <h1>Task Manager</h1>
 <p>This is an application for managing a to do list</p>
 
-<% x = 1  + 1 %><br />
-<%= x %><br />
-
-<ul>
-<% tasks = ["Dance", "Draw", "Walk"] %>
-
- <% tasks.each do |task| %>
-
-<li><%= task %></li> 
-<% end %>
-</ul>
-
+<a href="/tasks/index">Tasks1</a><br />
+<%= link_to('tasks2', {controller: 'tasks', action: 'index'}) %><br />
