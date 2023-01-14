@@ -1,7 +1,10 @@
 <%= link_to('Back to Homepage', {controller: 'main', action: 'index'}) %><br />
 
-
 <h1>Tasks#index</h1>
+
+<% if @page === 1 %>
+  <h2>Tasks List</h2>
+<% end %>
 
 <ul>
  <% @tasks.each do |task| %>
