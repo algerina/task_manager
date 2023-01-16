@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   def index
-    @page = params[:page].to_i
-    @tasks = ["Dance", "Draw", "Walk"]
+    @tasks = Task.order(:position)
   end
 
   def show
