@@ -1,7 +1,10 @@
 <h1>Task Manager</h1>
 <p>This is an application for managing a to do list</p>
 
-<%= link_to('tasks', {controller: 'tasks', action: 'index', page: '1'}) %><br />
+<%= link_to('categories' categories_path) %><br />
+
+
+<%= link_to('tasks', tasks_path(page: 1)) %><br />
 
 <%= link_to('About', {action: 'about', page: 5, id: 20 }) %><br />
 
