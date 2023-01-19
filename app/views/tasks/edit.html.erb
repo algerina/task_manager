@@ -1,2 +1,32 @@
-<h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
+<%= link_to("Back to List", tasks_path, :class => 'back-link') %>
+
+<div class="tasks edit">
+<h2>Edit Task</h2>
+
+  <%= form_for(@task) do |f| %>
+    <% # url: tasks_path(@task), method: 'patch' %>
+  <table summary="Task form fields">
+  <tr>
+  <th>Name</th>
+    <td><%= f.text_field(:name) %></td>
+  </tr>
+  <tr>
+    <th>Position</th>
+    <td><%= f.text_field(:position) %></td>
+ </tr>
+    <tr>
+      <th>Completed</th>
+    <td><%= f.check_box(:completed) %></td>
+ </tr>
+    <tr>
+      <th>Description</th>
+    <td><%= f.text_area(:description) %></td>
+  </tr>
+</table>
+    <div class="form-buttons">
+      <%= f.submit("Edit Task") %>
+    </div>
+
+  <% end %>
+</div>
+
