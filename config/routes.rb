@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'access/menu'
+  get 'access/new'
+  get 'access/create'
+  get 'access/destroy'
 root "main#index"
 
 
