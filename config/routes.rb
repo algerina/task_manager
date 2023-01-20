@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
-  get 'access/menu'
-  get 'access/new'
-  get 'access/create'
-  get 'access/destroy'
-root "main#index"
+  root "tasks#index"
 
+  get 'menu' => 'access#menu'
+  get 'login' => 'access#new'
+  delete 'logout' => 'access#destroy'
+  resource :access, controller: 'access', only: [:new, :create, :destroy] do
+    member do
+      get :menu
+    end
+  end
 
   match 'about', to: "main#about", via: :get
-  match 'hello', to: "main#hello", via: :get
 
-  get 'main/index'
-
-  resources :categories  do
+  resources :categories do
     member do
       get :delete
     end
@@ -22,18 +23,5 @@ root "main#index"
       get :delete
     end
   end
-
-  get 'tasks/index'
-  get 'tasks/new'
-  get 'tasks/edit'
-  get 'tasks/show'
-  get 'tasks/delete'
-
-  get 'categories/index'
-  get 'categories/show'
-  get 'categories/new'
-  get 'categories/edit'
-  get 'categories/delete'
-
  
 end
