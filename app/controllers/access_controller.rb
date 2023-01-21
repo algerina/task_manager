@@ -14,6 +14,7 @@ class AccessController < ApplicationController
    # do login process here
    redirect_to(menu_path)
    session[:user_id] = 1483
+   flash[:notice] = "Log in successful"
    cookies[:username] = params[:username] 
  end
 
