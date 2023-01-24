@@ -1,12 +1,11 @@
 class AccessController < ApplicationController
- # display menu
+skip_before_action :confirm_logged_in, only: [:new, :create]
+  # display menu
  def menu
-  get_user_info_from_session
  end
 
  # display login form
  def new
-  get_user_info_from_session
   if logged_in?
     redirect_to(menu_path)
   end
