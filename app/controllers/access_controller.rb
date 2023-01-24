@@ -1,26 +1,34 @@
 class AccessController < ApplicationController
  # display menu
  def menu
-  @username = cookies[:username]
-  @user_id = session[:user_id]
+  get_user_info_from_session
  end
 
  # display login form
  def new
+  get_user_info_from_session
+  if logged_in?
+    redirect_to(menu_path)
+  end
  end
 
  # processs login form
  def create
    # do login process here
-   redirect_to(menu_path)
+   logger.info("*** Login User #{params[:username]}")
+   cookies[:username] = params[:username]
    session[:user_id] = 1483
    flash[:notice] = "Log in successful"
-   cookies[:username] = params[:username] 
+   redirect_to(menu_path)
  end
 
  # logout user
  def destroy
    # do logout process here
+   logger.info("*** Logout User #{cookies[:username]}")
+   cookies[:username] = nil
+   session[:user_id] = nil
+   flash[:notice] = "Logged out"
    redirect_to(login_path)
  end
 
