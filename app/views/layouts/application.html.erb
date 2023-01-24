@@ -12,7 +12,7 @@
 
   <body>
     <header>
-       <%= link_to(menu_path) do %>
+      <%= link_to(menu_path) do %>
         <%= image_tag('task_manager_logo.png', height: 25, alt: 'Task Manager Logo') %>
       <% end %>
       <% if session[:user_id].present? %>
@@ -33,4 +33,3 @@
 
   </body>
 </html>
-
