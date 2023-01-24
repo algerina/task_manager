@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TaskManager</title>
+    <title>Task Manager<%= ' - ' + yield(:title) if content_for?(:title) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= yield(:script) %>
   </head>
 
   <body>
-   <header style="height: 1em; padding: 1em; margin-bottom: 1em; background: #0099CC;">
+    <header style="height: 1em; padding: 1em; margin-bottom: 1em; background: #0099CC;">
       Task Manager
       <% if session[:user_id].present? %>
         <span style="float: right;">
@@ -20,13 +20,15 @@
       <% end %>
     </header>
 
- <div id="content" style="min-height: 400px;">
+    <div id="content" style="min-height: 400px;">
       <%= render(partial: 'layouts/flash') %>
-    <%= yield %>
-  </div>
+      <%= yield %>
+    </div>
+
     <footer style="height: 1em; padding: 1em; margin-top: 1em; background: #0099CC;">
       Copyright <%= Time.now.year %>
     </footer>
 
   </body>
 </html>
+
