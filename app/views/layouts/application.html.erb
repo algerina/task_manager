@@ -20,8 +20,10 @@
       <% end %>
     </header>
 
+ <div id="content" style="min-height: 400px;">
+      <%= render(partial: 'layouts/flash') %>
     <%= yield %>
-
+  </div>
     <footer style="height: 1em; padding: 1em; margin-top: 1em; background: #0099CC;">
       Copyright <%= Time.now.year %>
     </footer>
