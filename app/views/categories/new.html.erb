@@ -1,2 +1,14 @@
-<h1>Categories#new</h1>
-<p>Find me in app/views/categories/new.html.erb</p>
+<%= link_to("Back to List", categories_path, :class => 'back-link') %>
+
+<div class="categories new">
+  <h2>Create Category</h2>
+
+  <%= form_for(@category) do |f| %>
+    <%= render(partial: 'form', locals: {f: f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit("Create Category") %>
+    </div>
+
+  <% end %>
+</div>
