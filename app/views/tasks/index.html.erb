@@ -1,4 +1,5 @@
 <%= link_to('Back to Menu', menu_path, class: 'back-link') %><br />
+
 <div class="tasks index">
   <h2>Tasks</h2>
 
@@ -9,6 +10,7 @@
       <th>#</th>
       <th>Task</th>
       <th>Completed</th>
+      <th>Description</th>
       <th>Category</th>
       <th>Actions</th>
     </tr>
@@ -16,7 +18,8 @@
     <tr>
       <td><%= task.position %></td>
       <td><%= task.name %></td>
-      <td><%= task.completed? ? 'Yes' : 'No' %></td>
+      <td><%= status_tag(task.completed?) %></td>
+      <td><%= truncate(task.description, length: 30 ) %></td>
       <td><%= task.category&.name || '-' %></td>
       <td class="actions">
         <%= link_to("Show", task_path(task), class: 'action show') %>

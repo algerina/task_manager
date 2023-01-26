@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :get_user_info_from_session
-
+  before_action :confirm_logged_in
+  
   private
 
   def get_user_info_from_session
