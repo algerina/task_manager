@@ -4,7 +4,7 @@ class User < ApplicationRecord
     [first_name, last_name].join(' ')
   end
 
-  def full_name
+  def last_name_first
     [last_name, first_name].join(', ')
   end
 
