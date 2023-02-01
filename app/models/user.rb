@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  scope :sorted, -> { order (:last_name, :first_name) }
+
   def full_name
     [first_name, last_name].join(' ')
   end
@@ -9,7 +11,7 @@ class User < ApplicationRecord
   end
 
   def abbrev_name
-    first-initial = first_name.chars.first + ". "
+    first_initial = first_name.chars.first + ". "
     [first_name, last_name].join(' ')
   end
   
