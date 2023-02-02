@@ -1,5 +1,17 @@
 class User < ApplicationRecord
 
+  EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
+
+  validates :first_name, presence: true, length: { maximum: 25 }
+  validates :last_name, presence: true, length: { maximum: 50 }
+  validates :email, presence: true,
+                    length: { maximum: 100 },
+										uniqueness: true,
+                    format: { with: EMAIL_REGEX },
+                    confirmation: true
+
+  validates_acceptance_of :terms
+
   scope :sorted, -> { order(:last_name, :first_name) }
 
   def full_name
