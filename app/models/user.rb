@@ -4,6 +4,9 @@ class User < ApplicationRecord
 
   has_many :task_assignments
 
+  has_many :tasks, through: :task_assignments
+
+
 
   validates :first_name, presence: true, length: { maximum: 25 }
   validates :last_name, presence: true, length: { maximum: 50 }
