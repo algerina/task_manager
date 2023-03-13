@@ -1,24 +1,89 @@
-# README
+# Task Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a mobile web application where Users can manage their tasks.
 
-Things you may want to cover:
+
+## Built With
+
+- Ruby
+- Ruby on Rails
+- PostgreSQL
+
+## Live Demo
+
+Coming soon...
+
+
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+To use this project you first need to have installed the following:
+
++ Node.js
++ Ruby
++ PostgreSQL
++ Rails
 
 * Ruby version
 
-* System dependencies
+The version of ruby that is needed for this project is 
 
-* Configuration
++ 2.7.5
+### Setup
 
-* Database creation
+Once you have installed them, you need to use the following command to clone the repository:
 
-* Database initialization
+```git clone https://github.com/algerina/task_manager.git```
 
-* How to run the test suite
+### Database creation
 
-* Services (job queues, cache servers, search engines, etc.)
+Next, use this command to create the databases:
+```rake db:create```
 
-* Deployment instructions
+Use this command to run the migrations if necesessary:
+```rails db:migrate```
 
-* ...
+### Usage
+
+Use the following command to initialize the live server:
+
+```rails s```
+
+
+### Install
+
+Run in the terminal to install the gems:
+
+`bundle install`
+
+### Usage
+
+To run the Rails server, in the terminal: 
+
+`rails s`
+
+## Author
+
+👤 **AmelKhiri**
+
+- GitHub: [@Algerina](https://github.com/Algerina)
+- LinkedIn: [Amel Khiri](https://www.linkedin.com/in/amel-khiri/)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Ruby and Ruby on Rails Documentation
+- Thanks to [Kevin Skoglund](https://www.linkedin.com/in/kevin-skoglund-13888930/?trk=lil_instructor) for the inspiration.
+
